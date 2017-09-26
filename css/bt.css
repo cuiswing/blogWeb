@@ -1,0 +1,15 @@
+.tooltip{
+width: 200px; color:#000;
+font:lighter 12px/1.1 Arial,sans-serif;
+text-decoration:none;text-align:center;
+}
+
+.tooltip span.top{padding: 30px 8px 10px 8px;
+    background: url(bt.gif) no-repeat top;
+    font-size:14px;
+    }
+
+.tooltip b.bottom{padding:3px auto 15px auto;line-height:2;color: #548912;
+    background: url(bt.gif) no-repeat left bottom;text-align:center;}
+
+    

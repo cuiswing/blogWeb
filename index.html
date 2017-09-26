@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="Movable Type  5.2.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="http://www.cui.com:7788/">
+    <link rel="stylesheet" href="http://www.cui.com:7788/css/theme_scrapbook.css" type="text/css">
+    <link rel="start" href="http://www.cui.com:7788/" title="Home">
+
+    <!--<script src="https://hm.baidu.com/hm.js?f89e0235da0841927341497d774e7b15"></script>-->
+    <!--<script async="" src="//www.google-analytics.com/analytics.js"></script>-->
+    <script type="text/javascript" src="js/mt.js"></script>
+
+    <title>CUI-index</title>
+    <script type="text/javascript" src="js/tooltip.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function (event) {
+            enableTooltips("latest-comments");
+        });
+
+        window.addEventListener('load', function (event) {
+            setTimeout(function () {
+                hab('#homepage_pos');
+            }, 1000);
+        });
+    </script>
+
+    <link class="undefined" type="text/css" rel="stylesheet" href="/css/bt.css" media="screen" style="display: block;">
+    <link href="js/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body id="scrapbook" class="mt-main-index two-columns">
+<script>
+    if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
+        document.body.classList.add('mobile');
+</script>
+
+<div id="container">
+    <div id="container-inner">
+        <div id="header">
+            <div id="header-inner">
+                <div id="header-content">
+                    <h1 id="header-name">CUI-index</h1>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div id="content-inner">
+                <div id="alpha">
+                    <div id="alpha-inner">
+                        <div id="entry-1958" class="entry-asset asset hentry">
+                            <div class="asset-header">
+                                <h2 class="asset-name entry-title">
+                                    <a href=""
+                                       rel="bookmark">{{articleNewest.title}}</a>
+                                </h2>
+                                <p id="asset-tags">
+                                    分类<span class="delimiter">：</span>
+                                    <a href="" rel="tag">{{articleNewest.categoryName}}</a>
+                                </p>
+                            </div>
+                            <div class="asset-content entry-content">
+                                <div class="asset-body" id="articleNewest-abstract">
+
+                                </div>
+                                <div class="asset-more-link">
+                                    <p>
+                                        <a :href="'http://www.cui.com:7788/article.html?id='+articleNewest.id"
+                                           rel="bookmark">继续阅读全文 »</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="asset-footer">
+                                <div class="asset-meta">
+                                    <p>
+                                        <span class="byline">
+                                            <abbr class="published"
+                                                  title="2017-09-19T07:06:48+08:00">{{articleNewest.createTime | formatDate('YYYY年M月D日 HH:mm')}}</abbr>
+                                        </span>
+                                        <span class="separator">|</span>
+                                        <a href="">
+                                            留言（{{articleNewest.commentCount}}）</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="homepage">
+                            <h3>最新文章</h3>
+                            <ul>
+
+                                <li class="module-list-item" v-for="article in articleListNew"><span>{{article.createTime | formatDate('YYYY年M月D日')}} » </span>
+                                    <a :href="'/article/content.html?id=' + article.id">{{article.title}}</a>
+                                </li>
+                                <li class="module-list-item"><a
+                                        href=""><strong>更多文章……</strong></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="beta">
+                    <div id="beta-inner">
+                        <div class="module-categories module">
+                            <h2 class="module-header">Follow me</h2>
+                            <div class="module-content">
+                                <ul class="module-list">
+                                    <li class="module-list-item">
+                                        <a href="">微博</a>，
+                                        <a href="">推特</a>，
+                                        <a href="">Feed</a>
+                                    </li>
+                                    <li class="module-list-item">
+                                        <a href="">Github</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="module-categories module">
+                            <h2 class="module-header">关于</h2>
+                            <div class="module-content">
+                                <ul class="module-list">
+                                    <p class="module-list-item">
+                                        <a href="">
+                                            <img src="" width="80"
+                                                 height="106" alt="个人照片">
+                                        </a>
+                                    </p>
+                                    <li class="module-list-item">
+                                        <a href="/about.html">个人简介</a>
+                                    </li>
+                                    <li class="module-list-item">
+                                        文章：
+                                        <a href="">665</a>，留言：223
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="footer">
+            <div id="footer-inner">
+                <div id="footer-content">
+                    <p><a href="/contact.html">联系方式</a> | 2017 - 2020
+                        <script>
+                            (function (i, s, o, g, r, a, m) {
+                                i['GoogleAnalyticsObject'] = r;
+                                i[r] = i[r] || function () {
+                                    (i[r].q = i[r].q || []).push(arguments)
+                                }, i[r].l = 1 * new Date();
+                                a = s.createElement(o),
+                                    m = s.getElementsByTagName(o)[0];
+                                a.async = 1;
+                                a.src = g;
+                                m.parentNode.insertBefore(a, m)
+                            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+                            ga('create', 'UA-46829782-1', 'cui.com');
+                            ga('send', 'pageview');
+                        </script>
+                        <script type="text/javascript" src="/js/stats.js"></script>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<span id="btc" style="position: absolute;"></span>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/plugins/bootstrap-toastr/toastr.min.js"></script>
+<script src="js/plugins/moment.min.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    var __ctx = "http://localhost:9090/blog";
+    var vm_index = new Vue({
+        el: "#content-inner",
+        data: {
+            articleNewest: {},
+            articleListNew: {}
+        },
+        mounted: function () {
+            this.loadGridData();
+        },
+        filters: {
+            formatDate: function (value, format) {
+                if (value) {
+                    console.log(moment.locale());
+                    return moment(value).format(format);
+                }
+            }
+        },
+        methods: {
+            loadGridData: function () {
+                $.ajax({
+                    type: "POST",
+                    url: __ctx + "/article/listNew",
+                    success: function (result) {
+                        if (result.success && result.data && result.data.data.length > 0) {
+                            vm_index.articleNewest = result.data.data[0];
+                            vm_index.articleListNew = result.data.data.slice(1);
+                            $("#articleNewest-abstract").html(vm_index.articleNewest.content.split("above@-@abstract")[0]);
+                        } else {
+                            toastr.error(result.errorMessage, "加载文章失败", {
+                                timeOut: 2000,
+                                positionClass: "toast-top-center"
+                            })
+                        }
+                    },
+                    error: function (result) {
+                        toastr.error(result, "加载文章失败", {
+                            timeOut: 2000,
+                            positionClass: "toast-top-center"
+                        });
+                    }
+                })
+            }
+        }
+    });
+</script>
+</body>
+</html>
