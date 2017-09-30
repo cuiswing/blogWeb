@@ -5,9 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="generator" content="Movable Type  5.2.2">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Access-Control-Allow-Origin" content="http://www.cui.com:7788/">
-    <link rel="stylesheet" href="http://www.cui.com:7788/css/theme_scrapbook.css" type="text/css">
-    <link rel="start" href="http://www.cui.com:7788/" title="Home">
+    <link rel="stylesheet" href="css/theme_scrapbook.css" type="text/css">
 
     <!--<script src="https://hm.baidu.com/hm.js?f89e0235da0841927341497d774e7b15"></script>-->
     <!--<script async="" src="//www.google-analytics.com/analytics.js"></script>-->
@@ -55,21 +53,20 @@
                         <div id="entry-1958" class="entry-asset asset hentry">
                             <div class="asset-header">
                                 <h2 class="asset-name entry-title">
-                                    <a href=""
-                                       rel="bookmark">{{articleNewest.title}}</a>
+                                    <a :href="'/article.html?id='+articleNewest.id" rel="bookmark" v-cloak>{{articleNewest.title}}</a>
                                 </h2>
                                 <p id="asset-tags">
                                     分类<span class="delimiter">：</span>
-                                    <a href="" rel="tag">{{articleNewest.categoryName}}</a>
+                                    <a href="" rel="tag" v-cloak>{{articleNewest.categoryName}}</a>
                                 </p>
                             </div>
                             <div class="asset-content entry-content">
-                                <div class="asset-body" id="articleNewest-abstract">
+                                <div class="asset-body" id="articleAbstract">
 
                                 </div>
                                 <div class="asset-more-link">
                                     <p>
-                                        <a :href="'http://www.cui.com:7788/article.html?id='+articleNewest.id"
+                                        <a :href="'/article.html?id='+articleNewest.id"
                                            rel="bookmark">继续阅读全文 »</a>
                                     </p>
                                 </div>
@@ -79,10 +76,10 @@
                                     <p>
                                         <span class="byline">
                                             <abbr class="published"
-                                                  title="2017-09-19T07:06:48+08:00">{{articleNewest.createTime | formatDate('YYYY年M月D日 HH:mm')}}</abbr>
+                                                  title="2017-09-19T07:06:48+08:00" v-cloak>{{articleNewest.createTime | formatDate('YYYY年M月D日 HH:mm')}}</abbr>
                                         </span>
                                         <span class="separator">|</span>
-                                        <a href="">
+                                        <a href="" v-cloak>
                                             留言（{{articleNewest.commentCount}}）</a>
                                     </p>
                                 </div>
@@ -94,7 +91,7 @@
                             <ul>
 
                                 <li class="module-list-item" v-for="article in articleListNew"><span>{{article.createTime | formatDate('YYYY年M月D日')}} » </span>
-                                    <a :href="'/article/content.html?id=' + article.id">{{article.title}}</a>
+                                    <a :href="'/article.html?id=' + article.id">{{article.title}}</a>
                                 </li>
                                 <li class="module-list-item"><a
                                         href=""><strong>更多文章……</strong></a>
@@ -185,7 +182,6 @@
 <script src="js/plugins/moment.min.js"></script>
 <script src="js/vue.js"></script>
 <script>
-    var __ctx = "http://localhost:9090/blog";
     var vm_index = new Vue({
         el: "#content-inner",
         data: {
@@ -207,12 +203,12 @@
             loadGridData: function () {
                 $.ajax({
                     type: "POST",
-                    url: __ctx + "/article/listNew",
+                    url: "/blog/article/listNew",
                     success: function (result) {
                         if (result.success && result.data && result.data.data.length > 0) {
                             vm_index.articleNewest = result.data.data[0];
                             vm_index.articleListNew = result.data.data.slice(1);
-                            $("#articleNewest-abstract").html(vm_index.articleNewest.content.split("above@-@abstract")[0]);
+                            $("#articleAbstract").html(vm_index.articleNewest.content.split("abstract@-@end")[0]);
                         } else {
                             toastr.error(result.errorMessage, "加载文章失败", {
                                 timeOut: 2000,

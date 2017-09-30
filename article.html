@@ -5,15 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="generator" content="Movable Type  5.2.2">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://www.cui.com:7788/css/theme_scrapbook.css" type="text/css">
-    <!--<script src="https://hm.baidu.com/hm.js?f89e0235da0841927341497d774e7b15"></script>-->
-    <!--<script async="" src="//www.google-analytics.com/analytics.js"></script>-->
+    <link rel="stylesheet" href="css/theme_scrapbook.css" type="text/css">
     <script type="text/javascript" src="js/mt.js"></script>
 
     <title></title>
-    <!--<script src="//static.bshare.cn/b/components/bsStatic.js?v=20170906" type="text/javascript" charset="utf-8"></script>-->
-    <!--<script src="//static.bshare.cn/js/libs/fingerprint2.min.js" type="text/javascript" charset="utf-8"></script>-->
-    <!--<script src="//static.bshare.cn/b/engines/bs-engine.js?v=20170906" type="text/javascript" charset="utf-8"></script>-->
     <style type="text/css">
         a.bshareDiv, #bsPanel, #bsMorePanel, #bshareF {
             border: none;
@@ -152,8 +147,6 @@
             text-decoration: underline;
             opacity: 1;
         }</style>
-    <!--<script src="//static.bshare.cn/b/components/bsMore.js?v=20170906" type="text/javascript" charset="utf-8"></script>-->
-    <!--<script src="//static.bshare.cn/b/styles/bshareS1.js?v=20170906" type="text/javascript" charset="utf-8"></script>-->
     <style type="text/css">
         div.bsClear {
             clear: both;
@@ -309,8 +302,6 @@
         .bsAwd {
             background: url(//static.bshare.cn/frame/images//promot/promote.gif) no-repeat;
         }</style>
-    <!--<script src="//bshare.optimix.asia/bshare_view?Callback=bShare.viewcb&amp;url=http%3A%2F%2Fwww.cui.com%2Fblog%2F2017%2F09%2Fes6_primer_3rd_edition.html&amp;h=&amp;uuid=15e016b4-0028-44f1-a40d-a3c9d9c13c28&amp;l=17&amp;lite=1&amp;ref=http%3A%2F%2Fwww.cui.com%2Fblog%2Farchives.html&amp;ot=《ES6 标准入门（第3版）》上市了！ - 阮一峰的网络日志&amp;cs=UTF-8&amp;fp=45e97c2084efcc523b107a2e204c90a8&amp;b=bs16038a"-->
-    <!--type="text/javascript" charset="utf-8"></script>-->
     <style type="text/css">
         a.bsSiteLink {
             text-decoration: none;
@@ -806,7 +797,7 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="http://www.cui.com/blog/js/prism.js"></script>
+        <script type="text/javascript" src="js/prism.js"></script>
 
         <div id="footer">
             <div id="footer-inner">
@@ -848,7 +839,6 @@
 <script src="js/plugins/moment.min.js"></script>
 <script src="js/vue.js"></script>
 <script>
-    var __ctx = "http://localhost:9090/blog";
     var params = getUrlParms();
     var id;
     //如果要查找参数key:
@@ -884,7 +874,7 @@
             loadData: function () {
                 $.ajax({
                     type: "GET",
-                    url: __ctx + "/article/" + id,
+                    url: "/blog/article/view/" + id,
                     success: function (result) {
                         if (result.success && result.data) {
                             vm_article.article = result.data;
@@ -908,7 +898,7 @@
             loadAllComment: function () {
                 $.ajax({
                     type: "GET",
-                    url: __ctx + "/comment/list?articleId=" + id,
+                    url: "/blog/comment/list?articleId=" + id,
                     success: function (result) {
                         if (result.success) {
                             vm_article.articleCommentList = result.data;
@@ -931,7 +921,7 @@
                 if (this.validation()) {
                     $.ajax({
                         type: "POST",
-                        url: __ctx + "/comment/save",
+                        url: "/blog/comment/save",
                         data: JSON.stringify(vm_article.commentVO),
                         dataType: "json",
                         contentType: "application/json;charset=UTF-8",
