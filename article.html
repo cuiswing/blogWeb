@@ -931,6 +931,8 @@
                                     timeOut: 2000,
                                     positionClass: "toast-top-center"
                                 });
+                                result.data.createTime = new Date();
+                                vm_article.articleCommentList.push(result.data);
                             } else {
                                 toastr.error(result.errorMessage, "保存失败", {
                                     timeOut: 2000,
