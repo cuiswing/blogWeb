@@ -681,7 +681,7 @@
                         </div>
 
                         <div id="comments" class="comments">
-                            <h2 class="comments-header">留言（{{article.commentCount}}条）</h2>
+                            <h2 class="comments-header">留言（{{articleCommentList.length}}条）</h2>
                             <div id="comments-content" class="comments-content" style="clear: left;">
 
                                 <div id="comment-380612" class="comment"
@@ -933,6 +933,10 @@
                                 });
                                 result.data.createTime = new Date();
                                 vm_article.articleCommentList.push(result.data);
+                                vm_article.commentVO.content = "";
+                                vm_article.commentVO.username = "";
+                                vm_article.commentVO.email = "";
+                                vm_article.commentVO.personalWebsite = "";
                             } else {
                                 toastr.error(result.errorMessage, "保存失败", {
                                     timeOut: 2000,
