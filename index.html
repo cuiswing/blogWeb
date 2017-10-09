@@ -110,7 +110,7 @@
                                         <a href="">Feed</a>
                                     </li>
                                     <li class="module-list-item">
-                                        <a href="https://github.com/cuiswing">Github</a>
+                                        <a href="https://github.com/cuiswing" target="_blank">Github</a>
                                     </li>
                                 </ul>
                             </div>
@@ -198,10 +198,17 @@
                     type: "POST",
                     url: "/blog/article/listNew",
                     success: function (result) {
-                        if (result.success && result.data && result.data.data.length > 0) {
-                            vm_index.articleNewest = result.data.data[0];
-                            vm_index.articleListNew = result.data.data.slice(1);
-                            $("#articleAbstract").html(vm_index.articleNewest.content.split("abstract@-@end")[0]);
+                        if (result.success && result.data) {
+                            if (result.data.data.length > 0) {
+                                vm_index.articleNewest = result.data.data[0];
+                                vm_index.articleListNew = result.data.data.slice(1);
+                                $("#articleAbstract").html(vm_index.articleNewest.content.split("abstract@-@end")[0]);
+                            } else {
+                                toastr.success("", "这是一个全新的网站，暂时还没有文章", {
+                                    timeOut: 2000,
+                                    positionClass: "toast-top-center"
+                                })
+                            }
                         } else {
                             toastr.error(result.errorMessage, "加载文章失败", {
                                 timeOut: 2000,
