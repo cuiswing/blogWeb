@@ -39,7 +39,7 @@
         <div id="header">
             <div id="header-inner">
                 <div id="header-content">
-                    <h1 id="header-name">CUI-index</h1>
+                    <h1 id="header-name">CUI的个人网站</h1>
                 </div>
             </div>
         </div>
@@ -106,12 +106,11 @@
                             <div class="module-content">
                                 <ul class="module-list">
                                     <li class="module-list-item">
-                                        <a href="">微博</a>，
-                                        <a href="">推特</a>，
+                                        <a href="">Twitter</a>，
                                         <a href="">Feed</a>
                                     </li>
                                     <li class="module-list-item">
-                                        <a href="">Github</a>
+                                        <a href="https://github.com/cuiswing">Github</a>
                                     </li>
                                 </ul>
                             </div>
@@ -121,18 +120,12 @@
                             <h2 class="module-header">关于</h2>
                             <div class="module-content">
                                 <ul class="module-list">
-                                    <p class="module-list-item">
-                                        <a href="">
-                                            <img src="" width="80"
-                                                 height="106" alt="个人照片">
-                                        </a>
-                                    </p>
                                     <li class="module-list-item">
-                                        <a href="/about.html">个人简介</a>
+                                        <a href="/about.html">about me</a>
                                     </li>
                                     <li class="module-list-item">
                                         文章：
-                                        <a href="">665</a>，留言：223
+                                        <a href="">{{statisticsInfo.articleCount}}</a>，留言：{{statisticsInfo.commentCount}}
                                     </li>
                                 </ul>
                             </div>
@@ -184,10 +177,12 @@
         el: "#content-inner",
         data: {
             articleNewest: {},
-            articleListNew: {}
+            articleListNew: {},
+            statisticsInfo: {}
         },
         mounted: function () {
             this.loadGridData();
+            this.loadArticleStatisticsData();
         },
         filters: {
             formatDate: function (value, format) {
@@ -216,6 +211,29 @@
                     },
                     error: function (result) {
                         toastr.error(result, "加载文章失败", {
+                            timeOut: 2000,
+                            positionClass: "toast-top-center"
+                        });
+                    }
+                })
+            },
+            //加载文章统计信息
+            loadArticleStatisticsData: function () {
+                $.ajax({
+                    type: "GET",
+                    url: "/blog/article/statistics",
+                    success: function (result) {
+                        if (result.success && result.data) {
+                            vm_index.statisticsInfo = result.data;
+                        } else {
+                            toastr.error(result.errorMessage, "加载文章数量失败", {
+                                timeOut: 2000,
+                                positionClass: "toast-top-center"
+                            })
+                        }
+                    },
+                    error: function (result) {
+                        toastr.error(result, "加载文章数量失败", {
                             timeOut: 2000,
                             positionClass: "toast-top-center"
                         });
