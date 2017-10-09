@@ -9,7 +9,7 @@ layouts: one-column, two-column-left, two-column-right, three-column
 */
 
 /* CSS Resetting */
- 
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, code,
@@ -94,15 +94,15 @@ ol li {
 
 img {
        border: 2px solid #00398a; }
-       
+
 strong{
-  font-weight:800; 
+  font-weight:800;
 }
 
 p,li{
   font-size:1.6em;
   line-height:220%;
-} 
+}
 
 input,textarea{
   font-size:1.13em;
@@ -118,7 +118,7 @@ select,button{
        margin: 0 auto;
        background-color:#f5f5d5;
        padding: 1em;
-       
+
 }
 
 body.one-column #container{
@@ -189,20 +189,20 @@ body.mobile.two-columns #container{
 #header #feed_icon{
   margin-top:0.9em;
   -webkit-transform: rotate(5deg);
-  -moz-transform: rotate(5deg); 
+  -moz-transform: rotate(5deg);
   -o-transform: rotate(5deg);
-  transform: rotate(5deg); 
-  -webkit-transition: -webkit-transform .4s ease-in; 
-  -moz-transition: -moz-transform .4s ease-in; 
+  transform: rotate(5deg);
+  -webkit-transition: -webkit-transform .4s ease-in;
+  -moz-transition: -moz-transform .4s ease-in;
   -o-transition: -o-transform .4s ease-in;
-  transition: transform .4s ease-in; 
+  transition: transform .4s ease-in;
 }
 
 #header #feed_icon:hover{
-  -webkit-transform: rotate(275deg); 
-  -moz-transform: rotate(275deg); 
+  -webkit-transform: rotate(275deg);
+  -moz-transform: rotate(275deg);
   -o-transform: rotate(275deg);
-  transform: rotate(275deg); 
+  transform: rotate(275deg);
 }
 
 #header #google_search{
@@ -272,7 +272,7 @@ body.mobile #header{
     max-width: 95%;
  }
 body.mobile #header h1,
-body.mobile #header #header-description, 
+body.mobile #header #header-description,
 body.mobile #header div#header-name{
     margin-top:0.5em;
   }
@@ -285,7 +285,7 @@ body.mobile #header div#header-name{
     max-width: 95%;
  }
   #header h1,
-#header #header-description, 
+#header #header-description,
 #header div#header-name{
     margin-top:0.5em;
   }
@@ -330,12 +330,12 @@ body.mobile #header div#header-name{
 
 .one-column #alpha h1{
   line-height:250%;
-        font-family:'Trebuchet MS', Arial, 'Lucida Grande', Verdana, Lucida, Helvetica, sans-serif;  
+        font-family:'Trebuchet MS', Arial, 'Lucida Grande', Verdana, Lucida, Helvetica, sans-serif;
 }
 
 body.one-column #content #alpha{
   padding-top:0.5em;
-}  
+}
 
 body.one-column #content #alpha p{
   margin-top:1em;
@@ -603,7 +603,7 @@ body.two-columns #content #alpha .asset-more-link a{
 
 body.two-columns #content #alpha .asset-footer{
    border-top:1px solid #d3d3d3;
-   margin-top:1em;     
+   margin-top:1em;
    padding-left:2em;
 }
 
@@ -672,7 +672,7 @@ body.two-columns #content #alpha .module h2{
 }
 
 .module p,.module ul{
-  margin-left:1em;  
+  margin-left:1em;
 }
 
 .module li{
@@ -700,7 +700,7 @@ body.two-columns #content #alpha #homepage h3{
 }
 
 body.two-columns #content #alpha #homepage ul{
-  margin-left:4em;  
+  margin-left:4em;
 }
 
 body.two-columns #content #alpha #homepage ul li,
@@ -788,8 +788,8 @@ body.mobile.two-columns #homepage_pos img{
        border-top:1px solid #d3d3d3;
        color:#d3d3d3;
        padding-top:0;
-       clear:both;  
-       line-height:1.2;     
+       clear:both;
+       line-height:1.2;
 }
 
 #footer p{
@@ -797,7 +797,7 @@ body.mobile.two-columns #homepage_pos img{
 }
 
 #foot-content{
-  float:right;  
+  float:right;
 }
 
 #footer a{
@@ -966,7 +966,7 @@ body.one-column #content #alpha div.asset-nav div.entry-location{
 
 body.one-column #content #alpha div.asset-nav div.entry-location li{
   display:block;
-  list-style-type: none; 
+  list-style-type: none;
 }
 
 body.one-column #content #alpha div.asset-nav div.entry-location a{
@@ -1001,7 +1001,7 @@ body.mobile.one-column #content #alpha div.asset-nav div.entry-location-mobile{
 
 body.mobile.one-column #content #alpha div.asset-nav div.entry-location-mobile li {
   display:inline;
-  list-style-type: none; 
+  list-style-type: none;
 }
 
 @media (max-width: 30rem) {
@@ -1014,7 +1014,7 @@ body.mobile.one-column #content #alpha div.asset-nav div.entry-location-mobile l
 
   body.one-column #content #alpha div.asset-nav div.entry-location-mobile li {
     display:inline;
-    list-style-type: none; 
+    list-style-type: none;
   }
 }
 
@@ -1044,7 +1044,7 @@ body.one-column #content #alpha div.asset-content blockquote{
   -moz-border-radius: 1em; /* FF1+ */
   -webkit-border-radius:1em; /* Saf3+, Chrome */
         border-radius: 1em;  font-family: Consolas, Monaco, 'Andale Mono', monospace;
-  border-width: 0.3em;   
+  border-width: 0.3em;
   border-color: #e0dfcc;
   border-style: solid;
   text-shadow: 0 1px white;
@@ -1057,7 +1057,7 @@ body.mobile.one-column #content #alpha div.asset-content blockquote{
     -moz-border-radius: 1em; /* FF1+ */
     -webkit-border-radius:1em; /* Saf3+, Chrome */
     border-radius: 1em;
-    border-width: 0.15em;   
+    border-width: 0.15em;
 }
 
 @media (max-width: 48rem) {
@@ -1067,14 +1067,14 @@ body.mobile.one-column #content #alpha div.asset-content blockquote{
     -moz-border-radius: 1em; /* FF1+ */
     -webkit-border-radius:1em; /* Saf3+, Chrome */
     border-radius: 1em;
-    border-width: 0.15em;   
+    border-width: 0.15em;
   }
 }
 
  /* Adsense */
 #googlead2{
  margin:0 auto;
- text-align:center;   
+ text-align:center;
 }
 
 #related_entries,#entry_utility,#gd1{
@@ -1082,7 +1082,7 @@ body.mobile.one-column #content #alpha div.asset-content blockquote{
 }
 
 #related_entries ul{
-  margin-left:2em;    
+  margin-left:2em;
 }
 
 #entry_utility ul{
@@ -1105,7 +1105,7 @@ body.mobile.one-column #content #alpha div.asset-content blockquote{
 #related_entries li div.entry-body{
   margin-left:1em;
   padding-left:0.4em;
-  border-left:0.4em solid gray; 
+  border-left:0.4em solid gray;
 }
 
 #gd1-inner {
@@ -1208,7 +1208,7 @@ body.mobile #sup-post-2 p img{
     position: relative;
     height: 0;
     padding: 26.67% 0 0 0;
-    overflow: hidden; 
+    overflow: hidden;
   }
 
   #sup-post-2 p img{
@@ -1244,11 +1244,11 @@ body.one-column #content #alpha #comments .comment{
 }
 
 body.one-column #content #alpha #comments .comment-header{
-  margin-top:1.6em;  
+  margin-top:1.6em;
 }
 
 body.one-column #content #alpha #comments .comment-header *{
-  color:#2B2B2B;  
+  color:#2B2B2B;
   font-weight:700;
 }
 
@@ -1266,7 +1266,7 @@ body.one-column #content #alpha #comments .comment-content blockquote{
   background-color:#e0dfcc;
   padding:2em;
   margin:2em 2em 2em 2em;
-  -moz-border-radius: 1em; 
+  -moz-border-radius: 1em;
   -webkit-border-radius:1em;
   border-radius: 1em;
   font-size: 0.9em
@@ -1358,7 +1358,7 @@ body.mobile.one-column #content #alpha #comments .comment-footer{
  body.one-column #content #alpha #comments .comment-footer{
     display: none;
   }
-}  
+}
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -1488,4 +1488,44 @@ pre[class*="language-"] {
 }
 .token a {
   color: inherit;
+}
+
+#main-content pre code,
+#main-content pre {
+    color: black;
+    text-shadow: 0 1px white;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    font-size: 1.2em;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+
+    background: #f5f2f0;
+}
+
+#main-content pre {
+    padding: 1em 1em 1.5em 1em;
+    overflow: auto;
+
+    background-color: #f5f2f0;
+    margin: 2em 2em;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    -moz-border-radius: 1em; /* FF1+ */
+    -webkit-border-radius: 1em; /* Saf3+, Chrome */
+    border-radius: 1em;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    border-width: 0.3em;
+    border-color: #e0dfcc;
+    border-style: solid;
+    text-shadow: 0 1px white;
 }
