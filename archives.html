@@ -43,7 +43,7 @@
                                 </h2>
                                 <p id="asset-tags">
                                     分类<span class="delimiter">：</span>
-                                    <a href="http://www.ruanyifeng.com/blog/developer/" rel="tag" v-cloak>{{articleNewest.categoryName}}</a>
+                                    <a href="" rel="tag" v-cloak>{{articleNewest.categoryName}}</a>
                                 </p>
                             </div>
                             <div class="asset-content entry-content">
@@ -159,7 +159,6 @@
         filters: {
             formatDate: function (value, format) {
                 if (value) {
-                    console.log(moment.locale());
                     return moment(value).format(format);
                 }
             }

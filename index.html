@@ -185,7 +185,6 @@
         filters: {
             formatDate: function (value, format) {
                 if (value) {
-                    console.log(moment.locale());
                     return moment(value).format(format);
                 }
             }
