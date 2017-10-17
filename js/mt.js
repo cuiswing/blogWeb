@@ -109,19 +109,6 @@ function RemoveHTML(strText) {
     return strText.replace(regEx, "");
 }
 
-function CommentQuote(v, f) {
-
-
-    window.location.href = window.location.href + "#comment-text";
-
-    string = document.forms["comments_form"].text.value;
-    string2 = ignoreSpaces(RemoveHTML(RemoveBlockquote(document.getElementById(v).innerHTML)));
-    document.forms["comments_form"].text.value = "<blockquote>\n<pre>引用" + f + "的发言：</pre>\n" + string2 + "\n</blockquote>\n\n" + string;
-
-
-    return true;
-}
-
 function ignoreSpaces(string) {
     var temp = "";
     string = '' + string;

@@ -625,7 +625,7 @@
                                         <p>分类<span class="delimiter">：</span></p>
                                         <ul>
                                             <li>
-                                                <a href="" rel="tag">{{article.categoryName}}</a>
+                                                <a href="" rel="tag" v-cloak>{{article.categoryName}}</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -690,13 +690,20 @@
                                             <div class="asset-meta">
                                                 <p>
                                                     <span class="byline">
-                                                        <span class="vcard author">{{commentItem.username}}</span>
+                                                        <span class="vcard author">
+                                                            <a :title="commentItem.personalWebsite" target="_blank"
+                                                               rel="nofollow" v-if="commentItem.personalWebsite"
+                                                               :href="commentItem.personalWebsite"
+                                                               v-cloak>{{commentItem.username}}</a>
+                                                            <span v-else v-cloak>{{commentItem.username}}</span>
+                                                             ：
+                                                        </span>
                                                     </span>
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="comment-content" id="comment-quote-380612">
-                                            {{commentItem.content}}
+                                        <div class="comment-content">
+                                            <pre v-bind:id="'comment-quote-'+commentItem.id" v-html="commentItem.content"></pre>
                                         </div>
                                         <div class="comment-footer">
                                             <div class="comment-footer-inner">
@@ -706,7 +713,7 @@
                                                     </abbr>
                                                     | {{ index+1 }} # |
                                                     <a href="#comment-text"
-                                                       onclick="return CommentQuote('comment-quote-380612','aaa');">
+                                                       v-on:click="CommentQuote('comment-quote-'+commentItem.id,commentItem.username);">
                                                         引用
                                                     </a>
                                                 </p>
@@ -801,35 +808,14 @@
         <div id="footer">
             <div id="footer-inner">
                 <div id="footer-content">
-                    <p><a href="/contact.html">联系方式</a> | 2003 - 2017
-
-                        <script>
-                            (function (i, s, o, g, r, a, m) {
-                                i['GoogleAnalyticsObject'] = r;
-                                i[r] = i[r] || function () {
-                                    (i[r].q = i[r].q || []).push(arguments)
-                                }, i[r].l = 1 * new Date();
-                                a = s.createElement(o),
-                                    m = s.getElementsByTagName(o)[0];
-                                a.async = 1;
-                                a.src = g;
-                                m.parentNode.insertBefore(a, m)
-                            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-                            ga('create', 'UA-46829782-1', 'cui.com');
-                            ga('send', 'pageview');
-
-                        </script>
-
+                    <p>
+                        <a href="/contact.html">联系方式</a> | 2003 - 2017
                         <script type="text/javascript" src="js/stats.js"></script>
-
-
                     </p>
 
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -986,6 +972,14 @@
                 if (bar < 99) {
                     setTimeout(this.stickCount(), 200);
                 }
+            },
+            //引用评论
+            CommentQuote: function (id, username) {
+                window.location.href = window.location.href + "#comment-text";
+                var inputComment = document.forms["comments_form"].text.value;
+                var quoteComment = ignoreSpaces(RemoveHTML(RemoveBlockquote(document.getElementById(id).innerHTML)));
+                inputComment = inputComment ? inputComment + "\n\n" : "";
+                document.forms["comments_form"].text.value = inputComment + "<blockquote>\n<pre>引用" + username + "的发言：</pre>\n" + quoteComment + "\n</blockquote>\n\n";
             }
         }
     });
