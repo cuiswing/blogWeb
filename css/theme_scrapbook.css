@@ -1490,6 +1490,7 @@ pre[class*="language-"] {
   color: inherit;
 }
 
+/*这我单独设置的样式*/
 #main-content pre code,
 #main-content pre {
     color: black;
@@ -1528,4 +1529,13 @@ pre[class*="language-"] {
     border-color: #e0dfcc;
     border-style: solid;
     text-shadow: 0 1px white;
+}
+
+.comment-content pre {
+    font-family: Georgia, serif;
+    font-size: 1.6em;
+}
+
+body.one-column #content #alpha #comments .comment-content pre blockquote pre {
+    font-size: 1em;
 }
